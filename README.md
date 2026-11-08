@@ -4,7 +4,7 @@ Personal Catalog is a reusable, open-source catalog site for sharing items that 
 
 **Live demo:** [jexraiden.github.io/personal-catalog](https://jexraiden.github.io/personal-catalog/)
 
-This project began with a personal need: I wanted one place to list items from my collection so people could easily see what I still have available. It also gave me a practical way to practice React and TypeScript, Spec-Driven Development with AI, product design, and UI/UX. The original use case grew out of my experience with [Tesouro Errante](https://www.tesouroerrante.com.br); this repository is a separate, reusable project and a way to share what I learned while building it.
+This project began with a personal need: I wanted one place to list items from my collection so people could easily see what I still have available. It also gave me a practical way to practice React and TypeScript, Spec-Driven Development with AI, product design, and UI/UX. The original use case grew out of my experience with [Tesouro Errante](https://tesouroerrante.com.br); this repository is a separate, reusable project and a way to share what I learned while building it.
 
 The site lets visitors browse item details and availability, select available items they are interested in, and contact the catalog owner. It does not process purchases, payments, orders, or reservations.
 
