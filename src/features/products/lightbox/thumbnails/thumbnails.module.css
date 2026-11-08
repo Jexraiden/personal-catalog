@@ -1,0 +1,52 @@
+.thumbnails {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  gap: 0.5rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  padding: 0.75rem;
+  cursor: grab;
+  touch-action: pan-x;
+  user-select: none;
+  scrollbar-width: thin;
+
+  &:active { cursor: grabbing; }
+}
+
+.thumbnail {
+  display: grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  flex-shrink: 0;
+  place-items: center;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: 0.25rem;
+  background: #000;
+
+  &:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  &[aria-pressed="true"] { border-color: var(--accent); }
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.videoLabel {
+  color: var(--palette-lightbox-control);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .thumbnails { justify-content: center; padding-inline: 1.25rem; }
+  .thumbnail { width: 4rem; height: 4rem; }
+}

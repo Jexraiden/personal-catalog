@@ -1,0 +1,282 @@
+.summaryBar {
+  position: fixed;
+  z-index: 40;
+  inset-inline-start: calc(1rem + env(safe-area-inset-left, 0px));
+  inset-inline-end: calc(1rem + env(safe-area-inset-right, 0px));
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  max-width: 36rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-inline: auto;
+  border: 2px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--card-surface);
+  padding: 1rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.summaryBoxIcon {
+  display: none;
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  background-color: var(--foreground);
+  mask: url("/icons/box-open.svg") center / contain no-repeat;
+}
+
+.summaryDetails { min-width: 0; flex: 1; }
+.summaryCount,
+.desktopPrice { white-space: nowrap; }
+.bold { font-weight: 700; }
+.mobilePrice { font-weight: 600; }
+.desktopPrice { display: none; font-weight: 600; }
+
+.viewButton {
+  position: relative;
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 0.375rem;
+  color: var(--foreground);
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+.viewIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.reviewDialog {
+  position: fixed;
+  inset-block: 0;
+  inset-inline-end: 0;
+  width: min(100vw, 36rem);
+  max-width: none;
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 0;
+  border-inline-start: 1px solid var(--border);
+  border-radius: 0;
+  background: var(--background);
+  padding: 1.5rem;
+  color: var(--foreground);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+  &::backdrop { background: transparent; }
+}
+
+.dialogHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.dialogTitle {
+  font-family: var(--font-newsreader), serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+}
+
+.closeButton,
+.removeButton {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--background);
+  color: var(--foreground);
+  transition: color 150ms, background-color 150ms;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+.closeButton { width: 2.5rem; height: 2.5rem; }
+.closeIcon { width: 1.25rem; height: 1.25rem; }
+.emptyMessage { margin-top: 1.5rem; }
+
+.productList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.productRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid var(--border-list);
+  padding-top: 1rem;
+}
+
+.productThumbnailButton {
+  flex-shrink: 0;
+  border-radius: 0.375rem;
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+.productThumbnail {
+  width: 4rem;
+  height: 4rem;
+  border: 2px solid transparent;
+  border-radius: 0.375rem;
+  object-fit: cover;
+  transition: border-color 150ms;
+}
+
+.productThumbnailButton:hover .productThumbnail,
+.productThumbnailButton:focus-visible .productThumbnail { border-color: var(--accent); }
+
+.productInfo { flex: 1; }
+.productName { font-weight: 600; }
+
+.productActions {
+  display: flex;
+  width: 2rem;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.discountBadge {
+  width: max-content;
+  padding: 0.25rem 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.removeButton { width: 2rem; height: 2rem; }
+
+.removeIcon {
+  transform: translateY(1px);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.totals {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--border-list);
+  padding-top: 1rem;
+}
+
+.totalRowSmall,
+.totalRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.totalRowSmall { font-size: 0.875rem; line-height: 1.25rem; }
+.discountTotal { color: var(--discount-price); font-weight: 600; }
+.semiBold { font-weight: 600; }
+.grandTotal { font-size: 1.25rem; font-weight: 700; line-height: 1.75rem; }
+
+.shippingNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  background: color-mix(in srgb, var(--foreground) 5%, var(--background));
+  padding: 0.625rem 0.75rem;
+  color: var(--foreground);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.shippingIcon {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+  margin-top: 0.125rem;
+}
+
+.contactButton {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.375rem;
+  background: var(--accent);
+  padding: 0.75rem 1.25rem;
+  margin-top: 0.375rem;
+  color: var(--accent-foreground);
+  font-weight: 600;
+  transition: background-color 150ms;
+
+  &:hover { background: var(--accent-hover); }
+  &:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+}
+
+.contactButtonDisabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contactIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  color: var(--palette-accent-foreground);
+}
+
+@media (min-width: 48rem) {
+  .summaryBar {
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    width: max-content;
+    gap: 1.5rem;
+    margin-inline: auto;
+    padding-block: 1.25rem;
+  }
+
+  .summaryBoxIcon { display: block; margin-inline-end: 0.25rem; }
+  .summaryDetails { flex: none; }
+  .mobilePrice { display: none; }
+  .desktopPrice { display: block; }
+  .reviewDialog { width: 28rem; border-radius: 0.75rem 0 0 0.75rem; }
+
+  .reviewDialog::backdrop { background: rgb(0 0 0 / 0.65); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .closeButton,
+  .removeButton,
+  .productThumbnail,
+  .contactButton { transition: none; }
+}

@@ -1,0 +1,276 @@
+.content {
+  order: 1;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.topRow,
+.metadata,
+.categoryRow,
+.priceRow {
+  display: flex;
+  align-items: center;
+}
+
+.shippingNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  background: color-mix(in srgb, var(--foreground) 5%, var(--background));
+  padding: 0.625rem 0.75rem;
+  color: var(--foreground);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.shippingIcon {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+  margin-top: 0.125rem;
+}
+
+.topRow {
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.metadata {
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.categoryRow {
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.category {
+  width: fit-content;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.itemCount {
+  width: fit-content;
+  border-radius: 0.25rem;
+  background: var(--card-surface);
+  padding: 0.25rem 0.5rem;
+  color: var(--foreground);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+}
+
+.closeButton {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: none;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--background);
+  color: var(--foreground);
+  transition: color 150ms, background-color 150ms;
+
+  &:hover {
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+.closeIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  overflow-wrap: break-word;
+  font-family: var(--font-newsreader), serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+.priceRow {
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.discountBadge {
+  padding: 0.375rem 0.75rem;
+}
+
+.condition {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sectionHeading {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+.emphasized {
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+.selectButton,
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.375rem;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  transition: color 150ms, background-color 150ms, border-color 150ms;
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+.selectButton {
+  flex-shrink: 0;
+  white-space: nowrap;
+  background: var(--accent);
+  color: var(--accent-foreground);
+
+  &:hover {
+    background: var(--accent-hover);
+  }
+}
+
+.contactButton {
+  border: 1px solid var(--border);
+  background: var(--card-surface);
+  text-align: center;
+
+  &:hover {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
+}
+
+.actionIcon {
+  width: 1.25rem;
+  height: auto;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+}
+
+.whatsappIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  color: var(--foreground);
+  transition: color 150ms;
+}
+
+.contactButton:hover .whatsappIcon,
+.contactButton:active .whatsappIcon,
+.contactButton:focus-visible .whatsappIcon {
+  color: var(--palette-accent-foreground);
+}
+
+.description,
+.comboSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.comboSection {
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.preLine {
+  white-space: pre-line;
+}
+
+.specifications {
+  padding-top: 0.5rem;
+}
+
+.comboList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: decimal;
+  padding-inline-start: 1.5rem;
+}
+
+.comboItem {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.5rem;
+}
+
+.comboNumber {
+  display: grid;
+  width: 2rem;
+  height: 1.5rem;
+  place-items: center;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+@media (min-width: 40rem) {
+  .title {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .selectButton {
+    width: 13rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .closeButton,
+  .selectButton,
+  .contactButton,
+  .whatsappIcon {
+    transition: none;
+  }
+}

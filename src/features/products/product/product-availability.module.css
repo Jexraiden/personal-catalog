@@ -1,0 +1,15 @@
+.reservedBadge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+}
+
+.reservedBadge {
+  background: var(--palette-reserved-badge-background);
+  color: var(--palette-reserved-badge-text);
+}

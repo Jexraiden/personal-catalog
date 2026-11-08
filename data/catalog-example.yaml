@@ -1,0 +1,175 @@
+currency: "USD"
+
+categories:
+  - id: "boardgame"
+    label: "Boardgame"
+  - id: "graphic-novel"
+    label: "Graphic Novel"
+  - id: "book"
+    label: "Book"
+  - id: "game"
+    label: "Game"
+  - id: "rpg"
+    label: "RPG"
+
+products:
+  - id: "dungeons-dragons-complete-kit"
+    name: "Dungeons & Dragons Complete Kit"
+    category: "rpg"
+    description: "A three-book core collection for players and Dungeon Masters: character creation and rules, a bestiary of memorable creatures, and a guide to building adventures. Sold together as one complete set."
+    specifications: "Includes the Player's Handbook, Monster Manual, and Dungeon Master's Guide. Hardcover rulebooks; English-language editions."
+    priceInCents: 45000
+    condition: "Very good"
+    conditionDetails: "All three books are complete and readable, with light shelf wear on the covers and no missing pages."
+    availability: "available"
+    coverImage:
+      src: "/catalog/example/dungeons-dragons-complete-kit/images/cover.webp"
+      alt: "Original fantasy-inspired illustration of three books in a gold-trimmed display"
+    images:
+      - src: "/catalog/example/dungeons-dragons-complete-kit/images/image-1.webp"
+        alt: "Player's Handbook cover"
+      - src: "/catalog/example/dungeons-dragons-complete-kit/images/image-2.webp"
+        alt: "Monster Manual cover"
+      - src: "/catalog/example/dungeons-dragons-complete-kit/images/image-3.webp"
+        alt: "Dungeon Master's Guide cover"
+    videos:
+      - source: "local"
+        src: "/catalog/example/dungeons-dragons-complete-kit/videos/video-1.mp4"
+        poster: "/catalog/example/dungeons-dragons-complete-kit/images/image-1.webp"
+    comboItems:
+      - name: "Dungeons & Dragons Player's Handbook"
+        description: "Core rules and character options for players."
+        specifications: "Hardcover; English-language edition."
+      - name: "Dungeons & Dragons Monster Manual"
+        description: "A bestiary of creatures for fantasy adventures."
+        specifications: "Hardcover; English-language edition."
+      - name: "Dungeons & Dragons Dungeon Master's Guide"
+        description: "Tools and guidance for running a fantasy campaign."
+        specifications: "Hardcover; English-language edition."
+    shipping:
+      weightGrams: 3600
+      widthCm: 24
+      heightCm: 29
+      lengthCm: 23
+
+  - id: "the-legend-of-zelda"
+    name: "The Legend of Zelda"
+    category: "game"
+    description: "A classic GameCube fantasy adventure. Explore Hyrule, solve dungeons, and travel between two connected worlds in this game."
+    specifications: "Platform: GameCube; format: DVD; region: North America; game with original box."
+    priceInCents: 28000
+    condition: "Good"
+    conditionDetails: "Tested and working; label has minor surface wear."
+    availability: "available"
+    coverImage:
+      src: "/catalog/example/the-legend-of-zelda/images/cover.webp"
+      alt: "Original illustration of a green-clad adventurer"
+    images:
+      - src: "/catalog/example/the-legend-of-zelda/images/image-1.webp"
+        alt: "Case content"
+    shipping:
+      weightGrams: 120
+      widthCm: 12
+      heightCm: 10
+      lengthCm: 3
+
+  - id: "dune-saga-collection"
+    name: "Dune Collection"
+    category: "book"
+    description: "The complete six-book original Dune saga, following the political, ecological, and generational history of Arrakis. The books are offered together as one collection."
+    specifications: "Six English-language paperback novels by Frank Herbert."
+    priceInCents: 36000
+    condition: "Good"
+    conditionDetails: "Readable copies with light to moderate shelf wear; some spine creasing. No missing pages."
+    availability: "available"
+    coverImage:
+      src: "/catalog/example/dune-saga-collection/images/cover.webp"
+      alt: "Original desert-inspired illustration of six books beneath a pale moon"
+    comboItems:
+      - name: "Dune"
+        specifications: "Paperback; English-language edition."
+      - name: "Dune Messiah"
+        specifications: "Paperback; English-language edition."
+      - name: "Children of Dune"
+        specifications: "Paperback; English-language edition."
+      - name: "God Emperor of Dune"
+        specifications: "Paperback; English-language edition."
+      - name: "Heretics of Dune"
+        specifications: "Paperback; English-language edition."
+      - name: "Chapterhouse: Dune"
+        specifications: "Paperback; English-language edition."
+    shipping:
+      weightGrams: 2100
+      widthCm: 22
+      heightCm: 23
+      lengthCm: 16
+
+  - id: "buffy-vampire-slayer-graphic-novel-collection"
+    name: "Buffy the Vampire Slayer Collection"
+    category: "graphic-novel"
+    description: "A shelf-ready collection of twelve hardcover graphic novels featuring supernatural mysteries, friendship, and monster-fighting adventures. Sold together as one collection."
+    specifications: "Twelve hardcover graphic novels; English-language editions. Estimated price shown after a 30% discount."
+    priceInCents: 60000
+    discountedPriceInCents: 42000
+    condition: "Very good"
+    conditionDetails: "The volumes are complete and clean, with light shelf wear to a few dust jackets."
+    availability: "available"
+    coverImage:
+      src: "/catalog/example/buffy-vampire-slayer-graphic-novel-collection/images/cover.webp"
+      alt: "Original gothic-inspired illustration of a moonlit city and twelve stacked graphic novels"
+    images:
+      - src: "/catalog/example/buffy-vampire-slayer-graphic-novel-collection/images/image-1.webp"
+        alt: "Volume 1 cover"
+      - src: "/catalog/example/buffy-vampire-slayer-graphic-novel-collection/images/image-2.webp"
+        alt: "Volume 2 cover"
+      - src: "/catalog/example/buffy-vampire-slayer-graphic-novel-collection/images/image-3.webp"
+        alt: "Volume 3 cover"
+      - src: "/catalog/example/buffy-vampire-slayer-graphic-novel-collection/images/image-4.webp"
+        alt: "Volume 1 content"
+      - src: "/catalog/example/buffy-vampire-slayer-graphic-novel-collection/images/image-5.webp"
+        alt: "Volume 2 content"
+      - src: "/catalog/example/buffy-vampire-slayer-graphic-novel-collection/images/image-6.webp"
+        alt: "Volume 3 content"
+    videos:
+      - source: "local"
+        src: "/catalog/example/buffy-vampire-slayer-graphic-novel-collection/videos/video-1.mp4"
+        poster: "/catalog/example/buffy-vampire-slayer-graphic-novel-collection/images/image-1.webp"
+    comboItems:
+      - name: "Buffy the Vampire Slayer hardcover graphic novel 1"
+      - name: "Buffy the Vampire Slayer hardcover graphic novel 2"
+      - name: "Buffy the Vampire Slayer hardcover graphic novel 3"
+      - name: "Buffy the Vampire Slayer hardcover graphic novel 4"
+      - name: "Buffy the Vampire Slayer hardcover graphic novel 5"
+      - name: "Buffy the Vampire Slayer hardcover graphic novel 6"
+      - name: "Buffy the Vampire Slayer hardcover graphic novel 7"
+      - name: "Buffy the Vampire Slayer hardcover graphic novel 8"
+      - name: "Buffy the Vampire Slayer hardcover graphic novel 9"
+      - name: "Buffy the Vampire Slayer hardcover graphic novel 10"
+      - name: "Buffy the Vampire Slayer hardcover graphic novel 11"
+      - name: "Buffy the Vampire Slayer hardcover graphic novel 12"
+    shipping:
+      weightGrams: 6200
+      widthCm: 25
+      heightCm: 29
+      lengthCm: 34
+
+  - id: "pandemic-boardgame"
+    name: "Pandemic"
+    category: "boardgame"
+    description: "A cooperative board game in which players work as a team of specialists to contain outbreaks and find cures before time runs out."
+    specifications: "Base game; 2–4 players; ages 8+; approximately 45 minutes; English-language edition."
+    priceInCents: 18000
+    condition: "Very good"
+    conditionDetails: "Game includes the board, cards, pawns, markers, and rulebook. Components are clean and counted. Box has light shelf wear."
+    availability: "available"
+    coverImage:
+      src: "/catalog/example/pandemic-boardgame/images/cover.webp"
+      alt: "Original illustrated board-game cover with a world map, colored outbreak points, and cooperative game pieces"
+    images:
+      - src: "/catalog/example/pandemic-boardgame/images/image-1.webp"
+        alt: "Pandemic components"
+    shipping:
+      weightGrams: 1100
+      widthCm: 23
+      heightCm: 5
+      lengthCm: 30

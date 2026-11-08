@@ -1,0 +1,165 @@
+.controls {
+  display: none;
+  width: 100%;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.arrow {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  background: var(--card-surface);
+  color: var(--foreground);
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.arrow:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.arrow:focus-visible,
+.pageButton:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.arrow:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.arrowStart {
+  justify-self: start;
+}
+
+.arrowEnd {
+  justify-self: end;
+}
+
+.arrowIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.controlsContent {
+  display: flex;
+  justify-content: center;
+}
+
+.track {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  gap: 1rem;
+  overflow-x: auto;
+  margin-top: 0.75rem;
+  contain: paint;
+  touch-action: pan-y;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x proximity;
+}
+
+.track::-webkit-scrollbar,
+.indicators::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.track > article {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-stop: always;
+}
+
+.trackDragging {
+  scroll-snap-type: none;
+}
+
+.track:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.desktopTrack {
+  cursor: grab;
+}
+
+.trackDisabled {
+  cursor: default;
+}
+
+.desktopTrack:active {
+  cursor: grabbing;
+}
+
+.desktopTrack.trackDisabled,
+.desktopTrack.trackDisabled:active {
+  cursor: default;
+}
+
+.indicators {
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+  gap: 0.25rem;
+  overflow-x: auto;
+  margin: 1rem auto 0;
+  padding-inline: 0.25rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.pageButton {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 9999px;
+  scroll-snap-align: center;
+}
+
+.dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 9999px;
+  transition: background-color 150ms ease;
+}
+
+.dotActive {
+  background: var(--accent);
+}
+
+.dotInactive {
+  background: color-mix(in srgb, var(--foreground) 35%, transparent);
+}
+
+.dotInactive:hover {
+  background: color-mix(in srgb, var(--foreground) 70%, transparent);
+}
+
+@media (min-width: 48rem) {
+  .controls {
+    display: grid;
+  }
+
+  .track {
+    margin-top: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .track > article {
+    flex-basis: calc((100% - 2rem) / 3);
+  }
+}

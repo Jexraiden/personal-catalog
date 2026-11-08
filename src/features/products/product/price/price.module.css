@@ -1,0 +1,45 @@
+.price {
+  display: inline-flex;
+}
+
+.cardPrice {
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.75rem;
+  row-gap: 0.25rem;
+  font-weight: 700;
+}
+
+.detailsPrice {
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+.selectionPrice {
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.discountedPrice {
+  color: var(--discount-price);
+}
+
+.originalPrice {
+  font-size: 0.875rem;
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+.discountBadge {
+  border-radius: 0.5rem;
+  background: var(--palette-discount-badge-background);
+  color: var(--palette-discount-badge-text);
+  font-weight: 700;
+}

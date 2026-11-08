@@ -1,0 +1,138 @@
+.stage {
+  position: relative;
+  min-height: 0;
+  flex: 1;
+  background: #000;
+}
+
+.fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+}
+
+.viewport {
+  position: absolute;
+  inset: 0;
+}
+
+.zoomedViewport {
+  overflow: auto;
+
+  & img { cursor: grab; }
+  & img:active { cursor: grabbing; }
+}
+
+.centeredViewport {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.touchPanY { touch-action: pan-y; }
+
+.mediaAlignment,
+.mediaFrame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mediaAlignment { min-height: 100%; min-width: 100%; }
+.zoomedAlignment { width: max-content; }
+.fitAlignment { width: 100%; height: 100%; }
+
+.mediaFrame {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.zoomedFrame { width: max-content; height: max-content; }
+.fitFrame { width: 100%; height: 100%; }
+
+.topControls {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.controlButton {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--accent);
+  transition: color 150ms, background-color 150ms;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.35;
+  }
+
+  &:disabled:hover {
+    background: transparent;
+    color: var(--accent);
+  }
+}
+
+.squareControl { width: 2.5rem; height: 2.5rem; }
+.controlIcon { width: 1.5rem; height: 1.5rem; }
+
+.closeIcon { width: 1.75rem; height: 1.75rem; }
+
+.navigationButton {
+  position: absolute;
+  top: 50%;
+  z-index: 20;
+  width: 3rem;
+  height: 3rem;
+  transform: translateY(-50%);
+}
+
+.previousButton { left: 0.5rem; }
+.nextButton { right: 0.5rem; }
+.navigationIcon { width: 2rem; height: 2rem; }
+.previousIcon { transform: translateX(-1px); }
+.nextIcon { transform: translateX(1px); }
+
+.slideNext { animation: enterFromRight 220ms ease-out both; }
+.slidePrevious { animation: enterFromLeft 220ms ease-out both; }
+
+@keyframes enterFromRight {
+  from { opacity: 0; transform: translateX(1.25rem); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes enterFromLeft {
+  from { opacity: 0; transform: translateX(-1.25rem); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (min-width: 40rem) {
+  .topControls { top: 1.25rem; right: 1.25rem; }
+  .previousButton { left: 1.25rem; }
+  .nextButton { right: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .controlButton { transition: none; }
+  .slideNext,
+  .slidePrevious { animation: none; }
+}

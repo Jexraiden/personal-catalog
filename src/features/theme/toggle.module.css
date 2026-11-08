@@ -1,0 +1,24 @@
+.button {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--foreground);
+  transition: background-color 150ms;
+
+  &:hover,
+  &:active { background: var(--card-surface); }
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+.icon { width: 1.5rem; height: 1.5rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .button { transition: none; }
+}

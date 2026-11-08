@@ -1,0 +1,33 @@
+.brandLight {
+  display: block;
+}
+
+.brandDark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :global(:root:not([data-theme="light"])) .brandLight {
+    display: none;
+  }
+
+  :global(:root:not([data-theme="light"])) .brandDark {
+    display: block;
+  }
+}
+
+:global(:root[data-theme="light"]) .brandLight {
+  display: block;
+}
+
+:global(:root[data-theme="light"]) .brandDark {
+  display: none;
+}
+
+:global(:root[data-theme="dark"]) .brandDark {
+  display: block;
+}
+
+:global(:root[data-theme="dark"]) .brandLight {
+  display: none;
+}
