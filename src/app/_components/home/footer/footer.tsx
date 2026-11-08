@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ProjectIcon } from "@/components/icons/project-icon";
 import { brand } from "@/config/brand";
+import { publicPath } from "@/lib/public-path";
 import type { site } from "@/config/site";
 import type { Locale } from "@/lib/i18n";
 import { buildGeneralContactMessage, buildWhatsAppUrl } from "@/lib/whatsapp";
@@ -24,7 +25,7 @@ export default function HomeFooter({ locale, site, messages }: HomeFooterProps) 
     <footer className={styles.footer}>
       <section id="about" aria-labelledby="about-title" className={styles.about}>
         <div className={styles.aboutContent}>
-          <Image src={brand.mark} alt="" aria-hidden="true" width={160} height={160} className={styles.brandMark} />
+          <Image src={publicPath(brand.mark)} alt="" aria-hidden="true" width={160} height={160} className={styles.brandMark} />
           <div className={styles.description}>
             <h2 id="about-title" className={styles.title}>{messages.brandName}</h2>
             <p>{messages.aboutDescription}</p>

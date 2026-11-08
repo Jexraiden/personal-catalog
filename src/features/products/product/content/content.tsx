@@ -8,6 +8,7 @@ import {
 } from "@/lib/whatsapp";
 import type { Locale } from "@/lib/i18n";
 import { messages } from "@/lib/i18n";
+import { publicPath } from "@/lib/public-path";
 import { DiscountBadge, ProductPrice } from "../price/price";
 import productStyles from "../product-availability.module.css";
 import styles from "./content.module.css";
@@ -104,7 +105,7 @@ export function ProductDetailsContent({
                         className={styles.selectButton}
                     >
                         <Image
-                            src={isSelected ? "/icons/box-closed.svg" : "/icons/box-open.svg"}
+                            src={publicPath(isSelected ? "/icons/box-closed.svg" : "/icons/box-open.svg")}
                             alt=""
                             aria-hidden="true"
                             width={24}

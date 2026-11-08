@@ -7,6 +7,7 @@ import type { Product } from "@/domain/product";
 import { buildReservedProductContactMessage, buildWhatsAppUrl } from "@/lib/whatsapp";
 import type { Locale } from "@/lib/i18n";
 import { messages } from "@/lib/i18n";
+import { publicPath } from "@/lib/public-path";
 import { useSelection } from "@/features/selection/provider";
 import { DiscountBadge, ProductPrice } from "../price/price";
 import styles from "./card.module.css";
@@ -167,7 +168,7 @@ export function ProductCard({
                         className={styles.action}
                     >
                         <Image
-                            src={isProductSelected ? "/icons/box-closed.svg" : "/icons/box-open.svg"}
+                            src={publicPath(isProductSelected ? "/icons/box-closed.svg" : "/icons/box-open.svg")}
                             alt=""
                             aria-hidden="true"
                             width={24}

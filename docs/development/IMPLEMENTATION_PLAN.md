@@ -4,7 +4,7 @@ This plan tracks the current implementation of the reusable catalog application.
 
 ## Current status
 
-Phases 1–11 and Phase 12 are complete. Phase 12 prepared the application as an open-source, English-first reusable demo with fictional contact destinations, public-safe sample data, generic project branding, and no project-specific deployment command.
+Phases 1–11 and Phase 12 are complete. Phase 12 prepared the application as an open-source, English-first reusable demo with fictional contact destinations, public-safe sample data, generic project branding, and a GitHub Pages deployment workflow.
 
 ## Phase 12 — Public repository productization (complete)
 
@@ -28,7 +28,7 @@ Phases 1–11 and Phase 12 are complete. Phase 12 prepared the application as an
 - Keep third-party dependency and font licenses intact and documented.
 - Remove all project-specific identity, terminology, artwork, and historical references from the current working tree.
 - Keep fictional contact examples and avoid adding private data.
-- Do not add deploy instructions to the README or a deploy command to the package scripts.
+- Publish the static demo through GitHub Pages without adding a project-specific deploy command to package scripts.
 - Do not create commits unless the user explicitly requests one.
 
 ### Acceptance criteria

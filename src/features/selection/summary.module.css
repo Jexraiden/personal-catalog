@@ -23,7 +23,9 @@
   height: 3rem;
   flex-shrink: 0;
   background-color: var(--foreground);
-  mask: url("/icons/box-open.svg") center / contain no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
 }
 
 .summaryDetails { min-width: 0; flex: 1; }

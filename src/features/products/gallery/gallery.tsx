@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ProjectIcon } from "@/components/icons/project-icon";
 import type { ProductImage, ProductVideo } from "@/domain/product";
 import { type Locale, messages } from "@/lib/i18n";
+import { publicPath } from "@/lib/public-path";
 import { ProductMediaRenderer } from "@/features/products/media-renderer/media-renderer";
 import styles from "./gallery.module.css";
 
@@ -47,7 +48,7 @@ export function ProductDetailsGallery({
             data-lightbox-trigger={`${productId}-image-${index}`}
             className={styles.thumbnail}
         >
-            <Image src={image.src} alt="" width={64} height={64} className={styles.thumbnailImage} />
+            <Image src={publicPath(image.src)} alt="" width={64} height={64} className={styles.thumbnailImage} />
         </button>
     );
 
@@ -64,7 +65,7 @@ export function ProductDetailsGallery({
         >
             {video.poster ? (
                 <span className={styles.videoThumbnailFrame}>
-                    <Image src={video.poster} alt="" width={64} height={64} className={styles.thumbnailImage} />
+                    <Image src={publicPath(video.poster)} alt="" width={64} height={64} className={styles.thumbnailImage} />
                     <span aria-hidden="true" className={`${styles.playBadge} ${styles.thumbnailPlayBadge}`}>
                         <ProjectIcon name="play-arrow" className={styles.playIcon} />
                     </span>

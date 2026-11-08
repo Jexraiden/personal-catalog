@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { brand } from "@/config/brand";
+import { publicPath } from "@/lib/public-path";
 import styles from "./hero.module.css";
 import type { HomeHeroProps } from "./types";
 
@@ -20,7 +21,7 @@ export default function ClassicHero({ messages }: HomeHeroProps) {
       </p>
       <Image
         className={styles.heroIllustration}
-        src={brand.heroIllustration}
+        src={publicPath(brand.heroIllustration)}
         alt={messages.heroIllustrationAlt}
         width={979}
         height={723}

@@ -1,6 +1,7 @@
 import { useEffect, useRef, type PointerEvent } from "react";
 import Image from "next/image";
 import { type Locale, messages } from "@/lib/i18n";
+import { publicPath } from "@/lib/public-path";
 import type { ProductGalleryItem } from "@/domain/product";
 import { isProductVideo } from "@/domain/product";
 import styles from "./thumbnails.module.css";
@@ -127,7 +128,7 @@ export function ProductLightboxThumbnails({
                 >
                     {!isProductVideo(item) || item.poster ? (
                         <Image
-                            src={!isProductVideo(item) ? item.src : item.poster ?? ""}
+                            src={publicPath(!isProductVideo(item) ? item.src : item.poster ?? "")}
                             alt=""
                             width={64}
                             height={64}

@@ -7,6 +7,7 @@ import ProductCarousel from "../carousel/carousel";
 import CategoryFilter from "../category-filter/category-filter";
 import type { Locale } from "@/lib/i18n";
 import { messages } from "@/lib/i18n";
+import { publicPath } from "@/lib/public-path";
 import type { Product, ProductCategory } from "@/domain/product";
 import { ProductItem } from "@/features/products/product/item";
 import { useSelection } from "@/features/selection/provider";
@@ -87,7 +88,7 @@ export default function CatalogView({
                 className={styles.productCardLayout}
                 thumbnail={
                     <Image
-                        src={coverImage.src}
+                        src={publicPath(coverImage.src)}
                         alt={coverImage.alt}
                         width={400}
                         height={600}

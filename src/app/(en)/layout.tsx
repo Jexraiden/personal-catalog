@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Newsreader, Source_Sans_3 } from "next/font/google";
 import { brand } from "@/config/brand";
 import { metadataBase } from "@/config/metadata-base";
+import { publicPath } from "@/lib/public-path";
 import "../globals.css";
 
 const newsreader = Newsreader({
@@ -19,8 +20,8 @@ export const metadata: Metadata = {
   title: brand.metadata.title,
   description: brand.metadata.englishDescription,
   icons: {
-    icon: "/brand/personal-catalog-mark.svg",
-    apple: "/brand/personal-catalog-app-icon.png",
+    icon: publicPath("/brand/personal-catalog-mark.svg"),
+    apple: publicPath("/brand/personal-catalog-app-icon.png"),
   },
   openGraph: {
     type: "website",

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { brand } from "@/config/brand";
+import { publicPath } from "@/lib/public-path";
 import { campaign } from "@/config/campaign";
 import CampaignCountdown from "./campaign-countdown";
 import styles from "./hero.module.css";
@@ -17,7 +18,7 @@ export default function CampaignHero({ messages }: HomeHeroProps) {
       </h1>
       <p className={styles.description}>{messages.campaignDescription}</p>
       <Image
-        src={brand.heroIllustration}
+        src={publicPath(brand.heroIllustration)}
         alt={messages.heroIllustrationAlt}
         width={979}
         height={723}

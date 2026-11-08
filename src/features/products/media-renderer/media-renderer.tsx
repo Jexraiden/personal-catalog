@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { type Locale, messages } from "@/lib/i18n";
 import { isProductVideo, type ProductGalleryItem } from "@/domain/product";
+import { publicPath } from "@/lib/public-path";
 import styles from "./media-renderer.module.css";
 
 function getYouTubeEmbedUrl(src: string): string | null {
@@ -44,7 +45,7 @@ export function ProductMediaRenderer({
     if (!isProductVideo(media)) {
         return (
             <Image
-                src={media.src}
+                src={publicPath(media.src)}
                 alt={media.alt}
                 width={isLightbox
                     ? naturalImageSize?.width ?? 400
@@ -92,7 +93,7 @@ export function ProductMediaRenderer({
                 preload="metadata"
                 className={styles.localVideo}
             >
-                <source src={media.src} />
+                <source src={publicPath(media.src)} />
                 Seu navegador não conseguiu reproduzir o vídeo.
             </video>
         );
@@ -108,7 +109,7 @@ export function ProductMediaRenderer({
 
     return (
         <Image
-            src={media.poster}
+            src={publicPath(media.poster)}
             alt={`${t.productVideo} ${productName}`}
             width={1280}
             height={720}

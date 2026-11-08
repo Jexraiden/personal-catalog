@@ -2,12 +2,13 @@
 
 import type { Locale } from "@/lib/i18n";
 import styles from "./language-switch.module.css";
+import { publicPath } from "@/lib/public-path";
 
 export default function LanguageSwitch({ locale, label }: { locale: Locale; label: string }) {
   function switchLanguage() {
     const nextLocale = locale === "en" ? "pt-BR" : "en";
     window.localStorage.setItem("personal-catalog-locale", nextLocale);
-    window.location.assign(nextLocale === "pt-BR" ? "/pt-BR" : "/");
+    window.location.assign(publicPath(nextLocale === "pt-BR" ? "/pt-BR" : "/"));
   }
 
   return (

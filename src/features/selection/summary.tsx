@@ -11,6 +11,7 @@ import {
 import { useSelection } from "./provider";
 import type { Locale } from "@/lib/i18n";
 import { messages } from "@/lib/i18n";
+import { publicPath } from "@/lib/public-path";
 import { DiscountBadge, ProductPrice } from "@/features/products/product/price/price";
 import styles from "./summary.module.css";
 
@@ -71,7 +72,7 @@ export default function SelectionSummary({
                     aria-label={t.selectionSummary}
                     className={styles.summaryBar}
                 >
-                    <span aria-hidden="true" className={styles.summaryBoxIcon} />
+                    <span aria-hidden="true" className={styles.summaryBoxIcon} style={{ maskImage: `url("${publicPath("/icons/box-open.svg")}")` }} />
                     <div className={styles.summaryDetails}>
                         <p className={styles.summaryCount}>
                             <strong className={styles.bold}>{count}</strong> {countLabel}
@@ -156,7 +157,7 @@ export default function SelectionSummary({
                                             className={styles.productThumbnailButton}
                                         >
                                             <Image
-                                                src={thumbnail.src}
+                                                src={publicPath(thumbnail.src)}
                                                 alt=""
                                                 aria-hidden="true"
                                                 width={72}
